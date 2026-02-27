@@ -1,7 +1,7 @@
 const form = document.querySelector("#agregar_tarea");
 const input = document.querySelector("#tareaInput");
-const divIncompletos = document.querySelector("#incompletos");
-const divCompletado = document.querySelector("#completado");
+const divIncompletos = document.querySelector("#incomplete");
+const divCompletado = document.querySelector("#complete");
 
 form.addEventListener("submit", function(e) {
     e.preventDefault(); //no recarga pg

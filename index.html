@@ -1,28 +1,32 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title>Title</title>
+        <title>Administrador de Tareas</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <main>
-            <div>    
-                <form id="agregar_tarea">
-                    <input type="text" id="tareaInput">
-                    <button type="submit">AGREGAR</button>
-                </form>    
-            </div>
-
-            <div id="incompletos">
-                <h1>Pendientes:</h1>
-            </div>
-            <div id="completado">
-                <h1>Completados:</h1>
-            </div>
-        </main>
-        <footer>
-        </footer>
-        <script src="app.js"></script>
-    </body>
+  <body>
+    <div class="kanban">
+      <h1 class="title">Kanban Board</h1>
+      <div class="input-section">
+        <form id="agregar_tarea">
+            <input type="text" id="tareaInput">
+            <button type="submit">AGREGAR</button>
+        </form>   
+      </div>
+ 
+      <div class="container">
+        <div id="incomplete" class="column">
+          <h1>Incompleto</h1>
+          <div class="task-list"></div>
+        </div>
+        <div id="complete" class="column">
+          <h1>Completo</h1>
+          <div class="task-list"></div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
 </html>
+ 
