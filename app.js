@@ -7,9 +7,10 @@ form.addEventListener("submit", function(e) {
     e.preventDefault(); //no recarga pg
 
     const texto = input.value.trim();
-    if (texto === "") return;
+    if (texto === "") return alert ("Por favor agrega texto antes de agregar una tarea");
 
     const tareaDiv = document.createElement("div");
+    tareaDiv.classList.add("tarea", "pendiente");
     tareaDiv.textContent = texto;
 
     let completado = false;
@@ -17,11 +18,15 @@ form.addEventListener("submit", function(e) {
     tareaDiv.addEventListener("click", function() {
         completado = !completado;
 
-        if (completado) {
-            divCompletado.appendChild(tareaDiv);
-        } else {
-            divIncompletos.appendChild(tareaDiv);
-        }
+    if (completado) {
+        tareaDiv.classList.add("completada");
+        tareaDiv.classList.remove("pendiente");
+        divCompletado.appendChild(tareaDiv);
+    } else {
+        tareaDiv.classList.add("pendiente");
+        tareaDiv.classList.remove("completada");
+        divIncompletos.appendChild(tareaDiv);
+    }
     });
 
     divIncompletos.appendChild(tareaDiv);
